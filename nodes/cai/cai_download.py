@@ -13,7 +13,7 @@ class CivitAIDownloader(BaseModelDownloader):
             "required": {       
                 "model_id": ("STRING", {"multiline": False, "default": "360292"}),
                 "version_id": ("STRING", {"multiline": False, "default": "", "placeholder": "Leave empty for latest version"}),
-                "token_id": ("STRING", {"multiline": False, "default": default_token,"password": True}),
+                "token_id": ("STRING", {"multiline": False, "default": default_token, "password": True}),
                 "save_dir": (get_model_dirs(),),
             },
             "hidden": {
