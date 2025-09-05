@@ -1,17 +1,19 @@
 from ..base_downloader import BaseModelDownloader, get_model_dirs
 from ..download_utils import DownloadManager
 import requests
+import os
 
 class CivitAIDownloader(BaseModelDownloader):
     base_url = 'https://civitai.com/api'
     
     @classmethod
     def INPUT_TYPES(cls):
+        default_token = os.environ.get("CIVIT_TOKEN", "") #get CIVIT_TOKEN from ENV (SECRETS)
         return {
             "required": {       
                 "model_id": ("STRING", {"multiline": False, "default": "360292"}),
                 "version_id": ("STRING", {"multiline": False, "default": "", "placeholder": "Leave empty for latest version"}),
-                "token_id": ("STRING", {"multiline": False, "default": "API_token_here"}),
+                "token_id": ("STRING", {"multiline": False, "default": default_token}),
                 "save_dir": (get_model_dirs(),),
             },
             "hidden": {
