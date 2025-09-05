@@ -94,7 +94,7 @@ class HFAuthDownloader(HFDownloader): # Inherit from HFDownloader to share metho
         }
 
     def download_model(self, repo_id, filename, local_path, hf_token, overwrite):
-        print(f'downloading model {repo_id} {filename} {local_path} {hf_token} {overwrite}')
+        print(f'downloading model {repo_id} {filename} {local_path} {overwrite}')
         try:
             # Always use token for auth version
             #import huggingface_hub

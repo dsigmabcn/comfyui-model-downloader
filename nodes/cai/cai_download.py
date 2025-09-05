@@ -13,7 +13,7 @@ class CivitAIDownloader(BaseModelDownloader):
             "required": {       
                 "model_id": ("STRING", {"multiline": False, "default": "360292"}),
                 "version_id": ("STRING", {"multiline": False, "default": "", "placeholder": "Leave empty for latest version"}),
-                "token_id": ("STRING", {"multiline": False, "default": default_token}),
+                "token_id": ("STRING", {"multiline": False, "default": default_token,"password": True}),
                 "save_dir": (get_model_dirs(),),
             },
             "hidden": {
@@ -71,6 +71,7 @@ class CivitAIDownloader(BaseModelDownloader):
             return filename, url
     
     def download(self, model_id, version_id, token_id, save_dir, node_id):
+        print(f"Starting download for CivitAI model ID: {model_id}")
         self.node_id = node_id
         filename, url = self.get_download_filename_url(model_id, version_id, token_id)
         save_path = self.prepare_download_path(save_dir, filename)
