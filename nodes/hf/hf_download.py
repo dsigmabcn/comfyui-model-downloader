@@ -19,8 +19,8 @@ class HFDownloader(BaseModelDownloader):
             "optional": {
                 "hf_token": ("STRING", {
                     "multiline": False,
-                    "default": default_token, 
-                    "password": True
+                    "default": default_token,                     
+                    "placeholder": "CIVIT AI TOKEN"
                 }),
                 "overwrite": ("BOOLEAN", {"default": True}),
                 "local_path_override": ("STRING", {"default": ""}),
