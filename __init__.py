@@ -17,7 +17,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "HF Downloader": "HF Download",
     "Auto Model Downloader": "Auto Model Finder (Experimental)",
     "CivitAI Downloader": "CivitAI Download",
-    "URL Downloader": "Download from UR",
+    "URL Downloader": "Download from URL",
 }
 
 # Web directory for JavaScript files
