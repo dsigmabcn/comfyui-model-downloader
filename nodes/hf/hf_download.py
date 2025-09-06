@@ -12,15 +12,15 @@ class HFDownloader(BaseModelDownloader):
         default_token = os.environ.get("HF_TOKEN", "")
         return {
             "required": {      
-                "repo_id": ("STRING", {"multiline": False, "default": "runwayml/stable-diffusion-v1-5"}),
-                "filename": ("STRING", {"multiline": False, "default": "v1-5-pruned-emaonly.ckpt"}),
+                "repo_id": ("STRING", {"multiline": False, "default": "RunDiffusion/Juggernaut-XL-v9"}),
+                "filename": ("STRING", {"multiline": False, "default": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"}),
                 "local_path": (get_model_dirs(),),
             },
             "optional": {
                 "hf_token": ("STRING", {
                     "multiline": False,
                     "default": default_token,                     
-                    "placeholder": "CIVIT AI TOKEN"
+                    "placeholder": "HUGGINGFACE TOKEN"
                 }),
                 "overwrite": ("BOOLEAN", {"default": True}),
                 "local_path_override": ("STRING", {"default": ""}),

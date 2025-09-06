@@ -11,10 +11,10 @@ class CivitAIDownloader(BaseModelDownloader):
         default_token = os.environ.get("CIVIT_TOKEN", "") #get CIVIT_TOKEN from ENV (SECRETS)
         return {
             "required": {       
-                "model_id": ("STRING", {"multiline": False, "default": "360292"}),
+                "model_id": ("STRING", {"multiline": False, "default": "1909621"}),
                 "version_id": ("STRING", {"multiline": False, "default": "", "placeholder": "Leave empty for latest version"}),
                 "token_id": ("STRING", {"multiline": False, "default": default_token, "placeholder": "CIVIT AI TOKEN"}),
-                "save_dir": (get_model_dirs(),),
+                "save_dir": (get_model_dirs(),{"default": "loras"}),
             },
             "hidden": {
                 "node_id": "UNIQUE_ID"
